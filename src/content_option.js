@@ -1,3 +1,5 @@
+import chatapplication from "./assets/images/chatapplication.png";
+import Rental_Image from "./assets/images/bike-rental.png";
 import image_me from "./assets/images/me.jpeg";
 
 const logotext = "Yogesh B.";
@@ -90,16 +92,14 @@ const services = [
 
 const dataportfolio = [
   {
-    img: "https://picsum.photos/400/?grayscale",
-    desctiption:
-      "The wisdom of life consists in the elimination of non-essentials.",
-    link: "#",
+    img: Rental_Image,
+    desctiption: "Bike Rental Application",
+    link: "https://github.com/uniquemozilla22/Bike_rental_System",
   },
   {
-    img: "https://picsum.photos/400/800/?grayscale",
-    desctiption:
-      "The wisdom of life consists in the elimination of non-essentials.",
-    link: "#",
+    img: chatapplication,
+    desctiption: "Chat Application",
+    link: "https://github.com/uniquemozilla22/nextjs-whatsapp",
   },
   {
     img: "https://picsum.photos/400/?grayscale",
@@ -167,7 +167,7 @@ const dataportfolio = [
 const contactConfig = {
   YOUR_EMAIL: "bhattaraiyogesh007@gmail.com",
   YOUR_FONE: "(977)9846779494",
-  description: "Lets create something beautiful together",
+  description: "Lets create something beautiful together.",
   YOUR_SERVICE_ID: "service_id",
   YOUR_TEMPLATE_ID: "template_id",
   YOUR_USER_ID: "user_id",
