@@ -1,6 +1,14 @@
+import weatheAPI from "./assets/images/weatheAPI.png";
+import rms from "./assets/images/rms.png";
+import fexal from "./assets/images/fexal.png";
+import canvas from "./assets/images/canvas.png";
+import shally from "./assets/images/shally.png";
+import merHealth from "./assets/images/MeroHealth.png";
+import ag from "./assets/images/agallery.png";
 import chatapplication from "./assets/images/chatapplication.png";
 import Rental_Image from "./assets/images/bike-rental.png";
-import image_me from "./assets/images/me.jpeg";
+import image_me from "./assets/images/me.png";
+import cv from "./assets/CV.pdf";
 
 const logotext = "Yogesh B.";
 const meta = {
@@ -17,14 +25,14 @@ const introdata = {
     third: "I make beautiful UI designs",
   },
   description:
-    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at nisl euismod urna bibendum",
+    "Everytime I go to sleep, I think of how I am going to imporve myself tomorrow.",
   your_img_url: image_me,
 };
 
 const dataabout = {
   title: "abit about my self",
   aboutme:
-    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent quis dolor id ligula semper elementum feugiat pretium nulla. Nunc non commodo dolor. Nunc mollis dignissim facilisis. Morbi ut magna ultricies.",
+    "With a passion in the feild of web development, I , Yogesh Bhattarai, can and would any projects tasks given to me with the hardwork and dedication towards happiness of fellow members or clients.",
 };
 const worktimeline = [
   {
@@ -74,27 +82,30 @@ const skills = [
 
 const services = [
   {
-    title: "UI & UX Design",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at nisl euismod urna bibendum sollicitudin.",
-  },
-  {
     title: "Web Apps",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at nisl euismod urna bibendum sollicitudin.",
+      "React Js, Node Js, Express, Mongo DB, MySQL, Oracle SQL and many More ",
+  },
+  {
+    title: "UI & UX Design",
+    description: "Tools :- Figma , Adobe XD , Photoshop , Illustrator",
   },
   {
     title: "Full stack Application",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at nisl euismod urna bibendum sollicitudin.",
+    description: "Frameworks : Next JS , Laravel , MERN ",
   },
 ];
 
 const dataportfolio = [
   {
-    img: Rental_Image,
-    desctiption: "Bike Rental Application",
-    link: "https://github.com/uniquemozilla22/Bike_rental_System",
+    img: merHealth,
+    desctiption: "Mero Health Application (React Native)",
+    link: "https://github.com/uniquemozilla22/Mero_Hospital",
+  },
+  {
+    img: shally,
+    desctiption: "Shally Web Design (React Js) - Digital Nepal Pvt Ltd",
+    link: "https://github.com/uniquemozilla22/Shally_web_design",
   },
   {
     img: chatapplication,
@@ -102,65 +113,42 @@ const dataportfolio = [
     link: "https://github.com/uniquemozilla22/nextjs-whatsapp",
   },
   {
-    img: "https://picsum.photos/400/?grayscale",
-    desctiption:
-      "The wisdom of life consists in the elimination of non-essentials.",
-    link: "#",
+    img: ag,
+    desctiption: "Art Gallery Client & Supplier (React JS) - AITC Pvt Ltd",
+    link: "https://github.com/uniquemozilla22/art_ecommerce_frontend_react",
   },
   {
-    img: "https://picsum.photos/400/600/?grayscale",
-    desctiption:
-      "The wisdom of life consists in the elimination of non-essentials.",
-    link: "#",
+    img: merHealth,
+    desctiption: "Mero Health Backend ( Node JS )",
+    link: "https://github.com/uniquemozilla22/Mero_Hospital",
   },
   {
-    img: "https://picsum.photos/400/300/?grayscale",
-    desctiption:
-      "The wisdom of life consists in the elimination of non-essentials.",
-    link: "#",
-  },
-  {
-    img: "https://picsum.photos/400/700/?grayscale",
-    desctiption:
-      "The wisdom of life consists in the elimination of non-essentials.",
-    link: "#",
+    img: Rental_Image,
+    desctiption: "Bike Rental Application",
+    link: "https://github.com/uniquemozilla22/Bike_rental_System",
   },
 
   {
-    img: "https://picsum.photos/400/600/?grayscale",
-    desctiption:
-      "The wisdom of life consists in the elimination of non-essentials.",
-    link: "#",
+    img: canvas,
+    desctiption: "Application to compile and draw the shape in canvas (C#)",
+    link: "https://github.com/uniquemozilla22/Code_line_to_Draw",
+  },
+
+  {
+    img: fexal,
+    desctiption: "Fexal E-commerce mock",
+    link: "https://blissful-mestorf-251970.netlify.app/",
   },
   {
-    img: "https://picsum.photos/400/300/?grayscale",
-    desctiption:
-      "The wisdom of life consists in the elimination of non-essentials.",
-    link: "#",
+    img: weatheAPI,
+    desctiption: "Weather App ( React Js)",
+    link: "https://github.com/uniquemozilla22/WeatherApp_API",
   },
   {
-    img: "https://picsum.photos/400/?grayscale",
+    img: rms,
     desctiption:
-      "The wisdom of life consists in the elimination of non-essentials.",
-    link: "#",
-  },
-  {
-    img: "https://picsum.photos/400/550/?grayscale",
-    desctiption:
-      "The wisdom of life consists in the elimination of non-essentials.",
-    link: "#",
-  },
-  {
-    img: "https://picsum.photos/400/?grayscale",
-    desctiption:
-      "The wisdom of life consists in the elimination of non-essentials.",
-    link: "#",
-  },
-  {
-    img: "https://picsum.photos/400/700/?grayscale",
-    desctiption:
-      "The wisdom of life consists in the elimination of non-essentials.",
-    link: "#",
+      "Restaurant Management System (React Native, TypeScript, NodejS)",
+    link: "https://github.com/uniquemozilla22/RMS_backend",
   },
 ];
 
@@ -168,15 +156,16 @@ const contactConfig = {
   YOUR_EMAIL: "bhattaraiyogesh007@gmail.com",
   YOUR_FONE: "(977)9846779494",
   description: "Lets create something beautiful together.",
-  YOUR_SERVICE_ID: "service_id",
-  YOUR_TEMPLATE_ID: "template_id",
-  YOUR_USER_ID: "user_id",
+  YOUR_SERVICE_ID: process.env.REACT_APP_SERVICE_ID,
+  YOUR_TEMPLATE_ID: process.env.REACT_APP_TEMPLETE_ID,
+  YOUR_USER_ID: process.env.REACT_APP_PUBLIC_KEY,
 };
 
 const socialprofils = {
   github: "https://github.com/uniquemozilla22",
   linkedin: "https://linkedin.com/in/yogesh-bhattarai-6b1112178/",
   twitter: "https://twitter.com/yogesh_creator",
+  cv: cv,
 };
 export {
   meta,
