@@ -8,7 +8,7 @@ import ag from "./assets/images/agallery.png";
 import chatapplication from "./assets/images/chatapplication.png";
 import Rental_Image from "./assets/images/bike-rental.png";
 import image_me from "./assets/images/me.png";
-import cv from "./assets/CV.pdf";
+import cv from "./assets/CV.pdf.pdf";
 
 const logotext = "Yogesh B.";
 const meta = {
@@ -38,7 +38,7 @@ const worktimeline = [
   {
     jobtitle: "Full Stack React Developer",
     where: "Takeo.ai, New York",
-    date: "Current",
+    date: "6 months",
   },
   {
     jobtitle: "React Developer",
@@ -60,7 +60,7 @@ const worktimeline = [
 const skills = [
   {
     name: "Node Js",
-    value: 85,
+    value: 90,
   },
   {
     name: "Javascript",
@@ -155,7 +155,7 @@ const dataportfolio = [
 const contactConfig = {
   YOUR_EMAIL: "bhattaraiyogesh007@gmail.com",
   YOUR_FONE: "(977)9846779494",
-  description: "Lets create something beautiful together.",
+  description: "Coffee are the best, lets have a cup ?",
   YOUR_SERVICE_ID: process.env.REACT_APP_SERVICE_ID,
   YOUR_TEMPLATE_ID: process.env.REACT_APP_TEMPLETE_ID,
   YOUR_USER_ID: process.env.REACT_APP_PUBLIC_KEY,
