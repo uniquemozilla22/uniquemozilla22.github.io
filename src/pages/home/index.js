@@ -5,7 +5,7 @@ import Typewriter from "typewriter-effect";
 import { introdata, meta } from "../../content_option";
 import { Link } from "react-router-dom";
 import { FaFileDownload } from "react-icons/fa";
-import cv from "../../assets/CV.pdf";
+import cv from "../../assets/CV.pdf.pdf";
 
 export const Home = () => {
   return (
