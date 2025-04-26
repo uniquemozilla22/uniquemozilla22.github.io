@@ -14,15 +14,15 @@ const logotext = "Yogesh B.";
 const meta = {
   title: "Yogesh Bhattarai",
   description:
-    "I’m Yogesh Web Developer _ Full stack devloper,currently working in Takeo.ai",
+    "I’m Yogesh Full Stack Developer _ Full stack devloper, How better would it be if eveything was in web ? I mean everything. Imagine",
 };
 
 const introdata = {
   title: "I’m Yogesh Bhattarai",
   animated: {
-    first: "I love coding",
-    second: "I code cool websites",
-    third: "I make beautiful UI designs",
+    first: "Did you know that every one is a developer now ?",
+    second: "Well i guess we should start networking, i will design the web. ",
+    third: "People call me spider. for a reason.",
   },
   description:
     "Everytime I go to sleep, I think of how I am going to imporve myself tomorrow.",
@@ -32,13 +32,13 @@ const introdata = {
 const dataabout = {
   title: "abit about my self",
   aboutme:
-    "With a passion in the feild of web development, I , Yogesh Bhattarai, can and would any projects tasks given to me with the hardwork and dedication towards happiness of fellow members or clients.",
+    "i know more about coffee than you. Download my resume for more.",
 };
 const worktimeline = [
   {
     jobtitle: "Full Stack React Developer",
     where: "Takeo.ai, New York",
-    date: "6 months",
+    date: "2 years",
   },
   {
     jobtitle: "React Developer",
@@ -71,6 +71,14 @@ const skills = [
     value: 99,
   },
   {
+    name: "Java Spring",
+    value: 99,
+  },
+  {
+    name: "React Native",
+    value: 99,
+  },
+  {
     name: "Jquery",
     value: 85,
   },
@@ -91,9 +99,10 @@ const services = [
     description: "Tools :- Figma , Adobe XD , Photoshop , Illustrator",
   },
   {
-    title: "Full stack Application",
+    title: "Full stack Web and Mobile Application",
     description: "Frameworks : Next JS , Laravel , MERN ",
   },
+  
 ];
 
 const dataportfolio = [
@@ -154,7 +163,7 @@ const dataportfolio = [
 
 const contactConfig = {
   YOUR_EMAIL: "bhattaraiyogesh007@gmail.com",
-  YOUR_FONE: "(977)9846779494",
+  YOUR_FONE: "(929)4205785",
   description: "Coffee are the best, lets have a cup ?",
   YOUR_SERVICE_ID: process.env.REACT_APP_SERVICE_ID,
   YOUR_TEMPLATE_ID: process.env.REACT_APP_TEMPLETE_ID,
