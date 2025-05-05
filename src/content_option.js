@@ -8,7 +8,6 @@ import ag from "./assets/images/agallery.png";
 import chatapplication from "./assets/images/chatapplication.png";
 import Rental_Image from "./assets/images/bike-rental.png";
 import image_me from "./assets/images/me.png";
-import cv from "./assets/CV.pdf.pdf";
 
 const logotext = "Yogesh B.";
 const meta = {
