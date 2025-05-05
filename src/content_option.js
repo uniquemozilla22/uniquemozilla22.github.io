@@ -35,26 +35,6 @@ const dataabout = {
     "i know more about coffee than you. Download my resume for more.",
 };
 const worktimeline = [
-  {
-    jobtitle: "Full Stack React Developer",
-    where: "Takeo.ai, New York",
-    date: "2 years",
-  },
-  {
-    jobtitle: "React Developer",
-    where: "Amazing IT Centre",
-    date: "8 months",
-  },
-  {
-    jobtitle: "Frontend Web Developer",
-    where: "Digital Nepal",
-    date: "6 months",
-  },
-  {
-    jobtitle: "Full Stack Developer",
-    where: "Kaaikaas Innovations Pvt Ltd",
-    date: "1 year 7 mths",
-  },
 ];
 
 const skills = [
