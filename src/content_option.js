@@ -152,9 +152,8 @@ const contactConfig = {
 
 const socialprofils = {
   github: "https://github.com/uniquemozilla22",
-  linkedin: "https://linkedin.com/in/yogesh-bhattarai-6b1112178/",
   twitter: "https://twitter.com/yogesh_creator",
-  cv: cv,
+  cv: "",
 };
 export {
   meta,
