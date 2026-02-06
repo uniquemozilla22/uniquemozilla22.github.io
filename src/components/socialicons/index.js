@@ -7,7 +7,6 @@ import {
   FaLinkedin,
   FaYoutube,
   FaTwitch,
-  FaDownload,
 } from "react-icons/fa";
 import { socialprofils } from "../../content_option";
 
