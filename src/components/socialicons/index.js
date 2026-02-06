@@ -43,13 +43,6 @@ export const Socialicons = (params) => {
             </a>
           </li>
         )}
-        {socialprofils.cv && (
-          <li>
-            <a href={socialprofils.cv}>
-              <FaDownload />
-            </a>
-          </li>
-        )}
         {socialprofils.youtube && (
           <li>
             <a href={socialprofils.youtube}>

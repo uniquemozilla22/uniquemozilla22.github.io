@@ -4,7 +4,6 @@ import { Helmet, HelmetProvider } from "react-helmet-async";
 import Typewriter from "typewriter-effect";
 import { introdata, meta } from "../../content_option";
 import { Link } from "react-router-dom";
-import { FaFileDownload } from "react-icons/fa";
 
 export const Home = () => {
   return (
