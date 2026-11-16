@@ -1,86 +1,84 @@
 .stick_follow_icon {
-    top: 50%;
-    left: 30px;
-    width: 20px;
-    height: 200px;
-    position: fixed;
-    margin-top: -100px;
+  position: fixed;
+  top: 50%;
+  left: 1.1rem;
+  z-index: 20;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.85rem;
 }
 
 .stick_follow_icon ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+}
+
+.stick_follow_icon a {
+  width: 36px;
+  height: 36px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  border: 1px solid var(--line-strong);
+  background: var(--bg-card);
+  color: var(--text);
+  transition: background-color 180ms ease, color 180ms ease, border-color 180ms ease, transform 180ms ease;
+}
+
+.stick_follow_icon a:hover,
+.stick_follow_icon a:focus-visible {
+  background: var(--accent);
+  color: var(--accent-ink);
+  border-color: var(--accent);
+  transform: translateY(-2px);
 }
 
 .stick_follow_icon svg {
-    width: 1.3em;
-    height: 1.3em;
-    fill: var(--text-color)
+  width: 1rem;
+  height: 1rem;
+  fill: currentColor;
 }
 
 .stick_follow_icon p {
-    top: 70px;
-    left: -24px;
-    width: 68px;
-    height: 20px;
-    color: var(--text-color);
-    font-size: 12px;
-    font-weight: 600;
-    line-height: 1.2;
-    white-space: nowrap;
-    position: relative;
-    transform: rotate( -90deg);
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
 }
 
-.stick_follow_icon ul li {
-    display: block;
-    font-size: 12px;
-    text-align: center;
-    margin-bottom: 10px;
-    transition: all .3s;
+body.ovhidden .stick_follow_icon {
+  opacity: 0;
+  pointer-events: none;
 }
 
-.stick_follow_icon p:after {
-    top: 9px;
-    right: -48px;
-    width: 40px;
-    height: 1px;
-    content: "";
-    display: block;
-    position: absolute;
-    background-color: var(--text-color);
-}
+@media (max-width: 1360px) {
+  .stick_follow_icon {
+    position: static;
+    transform: none;
+    flex-direction: row;
+    justify-content: center;
+    gap: 0.9rem;
+    padding: 0.5rem 1.25rem 2.5rem;
+  }
 
-@media only screen and (max-width: 991px) {
-    .stick_follow_icon {
-        width: unset;
-        height: unset;
-        position: static;
-        margin-top: unset;
-        display: flex;
-        flex-direction: row-reverse;
-        justify-content: center;
-        padding: 40px 0;
-        align-items: center;
-    }
-    .stick_follow_icon p {
-        top: unset;
-        left: unset;
-        width: unset;
-        height: unset;
-        white-space: nowrap;
-        position: relative;
-        transform: unset;
-        font-size: 17px;
-        margin-right: 65px;
-    }
-    .stick_follow_icon ul {
-        margin-bottom: 20px;
-    }
-    .stick_follow_icon ul li {
-        display: inline;
-        margin-bottom: 29px;
-        margin-right: 10px;
-    }
+  .stick_follow_icon ul {
+    flex-direction: row;
+  }
+
+  .stick_follow_icon p {
+    writing-mode: horizontal-tb;
+    transform: none;
+    letter-spacing: 0.08em;
+    font-size: 0.85rem;
+  }
 }

@@ -66,24 +66,22 @@ export const ContactUs = () => {
 
   return (
     <HelmetProvider>
-      <Container>
+      <Container className="page-wrap">
         <Helmet>
           <meta charSet="utf-8" />
           <title>{meta.title} | Contact</title>
           <meta name="description" content={meta.description} />
         </Helmet>
-        <Row className="mb-5 mt-3">
-          <Col lg="8">
-            <h1 className="display-4 mb-4">Contact Me</h1>
-            <hr className="t_border my-4 ml-0 text-left" />
-          </Col>
-        </Row>
+        <header className="page-intro">
+          <h1 className="page-title">Contact Me</h1>
+          <hr className="t_border my-4 ml-0 text-left" />
+        </header>
         <Row className="sec_sp">
           <Col lg="12">
             <Alert
               //show={formData.show}
               variant={formData.variant}
-              className={`rounded-0 co_alert ${
+              className={`co_alert ${
                 formData.show ? "d-block" : "d-none"
               }`}
               onClose={() => setFormdata({ show: false })}
@@ -93,28 +91,33 @@ export const ContactUs = () => {
             </Alert>
           </Col>
           <Col lg="5" className="mb-5">
-            <h3 className="color_sec py-4">Get in touch</h3>
-            <address>
-              <strong>Email:</strong>{" "}
-              <a href={`mailto:${contactConfig.YOUR_EMAIL}`}>
-                {contactConfig.YOUR_EMAIL}
-              </a>
-              <br />
-              <br />
-              {contactConfig.hasOwnProperty("YOUR_FONE") ? (
-                <p>
-                  <strong>Phone:</strong> {contactConfig.YOUR_FONE}
-                </p>
-              ) : (
-                ""
-              )}
-            </address>
-            <p>{contactConfig.description}</p>
+            <div className="contact-aside">
+              <h2 className="color_sec">Get in touch</h2>
+              <address>
+                <strong>Email:</strong>{" "}
+                <a href={`mailto:${contactConfig.YOUR_EMAIL}`}>
+                  {contactConfig.YOUR_EMAIL}
+                </a>
+                <br />
+                <br />
+                {contactConfig.hasOwnProperty("YOUR_FONE") ? (
+                  <p>
+                    <strong>Phone:</strong> {contactConfig.YOUR_FONE}
+                  </p>
+                ) : (
+                  ""
+                )}
+              </address>
+              <p className="contact-copy">{contactConfig.description}</p>
+            </div>
           </Col>
-          <Col lg="7" className="d-flex align-items-center">
+          <Col lg="7" className="d-flex align-items-start">
             <form onSubmit={handleSubmit} className="contact__form w-100">
               <Row>
                 <Col lg="6" className="form-group">
+                  <label className="sr-only" htmlFor="name">
+                    Name
+                  </label>
                   <input
                     className="form-control"
                     id="name"
@@ -127,8 +130,11 @@ export const ContactUs = () => {
                   />
                 </Col>
                 <Col lg="6" className="form-group">
+                  <label className="sr-only" htmlFor="email">
+                    Email
+                  </label>
                   <input
-                    className="form-control rounded-0"
+                    className="form-control"
                     id="email"
                     name="email"
                     placeholder="Email"
@@ -139,8 +145,11 @@ export const ContactUs = () => {
                   />
                 </Col>
               </Row>
+              <label className="sr-only" htmlFor="message">
+                Message
+              </label>
               <textarea
-                className="form-control rounded-0"
+                className="form-control"
                 id="message"
                 name="message"
                 placeholder="Message"

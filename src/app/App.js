@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import {
   BrowserRouter as Router,
@@ -20,18 +20,40 @@ function _ScrollToTop(props) {
 const ScrollToTop = withRouter(_ScrollToTop);
 
 export default function App() {
+  const [motionOk, setMotionOk] = useState(() => {
+    if (typeof window === "undefined") return true;
+    return !window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  });
+
+  useEffect(() => {
+    const media = window.matchMedia("(prefers-reduced-motion: reduce)");
+    const update = () => {
+      const ok = !media.matches;
+      setMotionOk(ok);
+      if (!ok) document.body.style.cursor = "";
+    };
+    if (media.addEventListener) {
+      media.addEventListener("change", update);
+      return () => media.removeEventListener("change", update);
+    }
+    media.addListener(update);
+    return () => media.removeListener(update);
+  }, []);
+
   return (
     <Router basename={process.env.PUBLIC_URL}>
-      <div className="cursor__dot">
-        <AnimatedCursor
-          innerSize={15}
-          outerSize={15}
-          color="255, 255 ,255"
-          outerAlpha={0.4}
-          innerScale={0.7}
-          outerScale={5}
-        />
-      </div>
+      {motionOk ? (
+        <div className="cursor__dot">
+          <AnimatedCursor
+            innerSize={9}
+            outerSize={36}
+            color="214, 255, 62"
+            outerAlpha={0.28}
+            innerScale={0.7}
+            outerScale={1.55}
+          />
+        </div>
+      ) : null}
       <ScrollToTop>
         <Headermain />
         <AppRoutes />

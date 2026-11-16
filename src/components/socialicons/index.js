@@ -10,51 +10,27 @@ import {
 } from "react-icons/fa";
 import { socialprofils } from "../../content_option";
 
-export const Socialicons = (params) => {
+const profiles = [
+  { key: "twitter", href: socialprofils.twitter, label: "Twitter", icon: <FaTwitter /> },
+  { key: "github", href: socialprofils.github, label: "Github", icon: <FaGithub /> },
+  { key: "facebook", href: socialprofils.facebook, label: "Facebook", icon: <FaFacebookF /> },
+  { key: "linkedin", href: socialprofils.linkedin, label: "Linkedin", icon: <FaLinkedin /> },
+  { key: "youtube", href: socialprofils.youtube, label: "Youtube", icon: <FaYoutube /> },
+  { key: "twitch", href: socialprofils.twitch, label: "Twitch", icon: <FaTwitch /> },
+];
+
+export const Socialicons = () => {
   return (
     <div className="stick_follow_icon">
       <ul>
-        {socialprofils.twitter && (
-          <li>
-            <a href={socialprofils.twitter}>
-              <FaTwitter />
-            </a>
-          </li>
-        )}
-        {socialprofils.github && (
-          <li>
-            <a href={socialprofils.github}>
-              <FaGithub />
-            </a>
-          </li>
-        )}
-        {socialprofils.facebook && (
-          <li>
-            <a href={socialprofils.facebook}>
-              <FaFacebookF />
-            </a>
-          </li>
-        )}
-        {socialprofils.linkedin && (
-          <li>
-            <a href={socialprofils.linkedin}>
-              <FaLinkedin />
-            </a>
-          </li>
-        )}
-        {socialprofils.youtube && (
-          <li>
-            <a href={socialprofils.youtube}>
-              <FaYoutube />
-            </a>
-          </li>
-        )}
-        {socialprofils.twitch && (
-          <li>
-            <a href={socialprofils.twitch}>
-              <FaTwitch />
-            </a>
-          </li>
+        {profiles.map((profile) =>
+          profile.href ? (
+            <li key={profile.key}>
+              <a href={profile.href} aria-label={profile.label}>
+                {profile.icon}
+              </a>
+            </li>
+          ) : null
         )}
       </ul>
       <p>Follow Me</p>

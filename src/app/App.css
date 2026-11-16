@@ -1,31 +1,52 @@
-@media only screen and (max-width: 991px) {
-    .s_c {
-        padding-top: 40px;
-    }
+.s_c {
+  position: relative;
+}
+
+.page-stage {
+  position: relative;
+}
+
+.page-pane {
+  width: 100%;
 }
 
 .page-enter {
-    transform: translateY(100%);
+  opacity: 0;
+  transform: translateY(12px);
 }
 
 .page-enter-active {
-    transform: translateY(0%);
-    transition: all 400ms ease-out;
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 450ms ease, transform 450ms ease;
 }
 
 .page-exit {
-    transform: translateY(0%);
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: 0;
+  opacity: 1;
+  pointer-events: none;
+}
+
+.page-exit,
+.page-exit-active {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
 }
 
 .page-exit-active {
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: 0;
-    transform: translateY(-130%);
-    transition: all 400ms ease-out;
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: opacity 450ms ease, transform 450ms ease;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .page-enter,
+  .page-enter-active,
+  .page-exit,
+  .page-exit-active {
+    transform: none !important;
+    transition: none !important;
+    opacity: 1 !important;
+  }
 }

@@ -2,10 +2,20 @@ import React from "react";
 import "./style.css";
 import { Helmet, HelmetProvider } from "react-helmet-async";
 import Typewriter from "typewriter-effect";
-import { introdata, meta } from "../../content_option";
+import { introdata, meta, dataabout, dataportfolio } from "../../content_option";
 import { Link } from "react-router-dom";
+import usePrefersReducedMotion from "../../hooks/usePrefersReducedMotion";
+
+const featured = dataportfolio.slice(0, 3);
 
 export const Home = () => {
+  const reduced = usePrefersReducedMotion();
+  const lines = [
+    introdata.animated.first,
+    introdata.animated.second,
+    introdata.animated.third,
+  ];
+
   return (
     <HelmetProvider>
       <section id="home" className="home">
@@ -14,51 +24,67 @@ export const Home = () => {
           <title> {meta.title}</title>
           <meta name="description" content={meta.description} />
         </Helmet>
-        <div className="intro_sec d-block d-lg-flex align-items-center ">
-          <div
-            className="h_bg-image order-1 order-lg-2 h-100 "
-            style={{ backgroundImage: `url(${introdata.your_img_url})` }}
-          ></div>
-          <div className="text order-2 order-lg-1 h-100 d-lg-flex justify-content-center">
-            <div className="align-self-center ">
-              <div className="intro mx-auto">
-                <h2 className="mb-1x">{introdata.title}</h2>
-                <h1 className="fluidz-48 mb-1x">
-                  <Typewriter
-                    options={{
-                      strings: [
-                        introdata.animated.first,
-                        introdata.animated.second,
-                        introdata.animated.third,
-                      ],
-                      autoStart: true,
-                      loop: true,
-                      deleteSpeed: 10,
-                    }}
-                  />
-                </h1>
-                <p className="mb-1x">{introdata.description}</p>
-                <div className="intro_btn-action pb-5">
-                  <Link to="/portfolio" className="text_2">
-                    <div id="button_p" className="ac_btn btn ">
-                      My Portfolio
-                      <div className="ring one"></div>
-                      <div className="ring two"></div>
-                      <div className="ring three"></div>
-                    </div>
-                  </Link>
-                  <Link to="/contact">
-                    <div id="button_h" className="ac_btn btn">
-                      Contact Me
-                      <div className="ring one"></div>
-                      <div className="ring two"></div>
-                      <div className="ring three"></div>
-                    </div>
-                  </Link>
+        <div className="shell bento">
+          <div className="tile tile--hero">
+            <h1 className="hero-title">{introdata.title}</h1>
+            <div className="hero-type">
+              {reduced ? (
+                <div className="hero-lines">
+                  {lines.map((line) => (
+                    <p key={line}>{line}</p>
+                  ))}
                 </div>
-              </div>
+              ) : (
+                <Typewriter
+                  options={{
+                    strings: lines,
+                    autoStart: true,
+                    loop: true,
+                    deleteSpeed: 10,
+                  }}
+                />
+              )}
+            </div>
+            <p className="hero-copy">{introdata.description}</p>
+            <div className="hero-actions">
+              <Link to="/portfolio" className="btn btn-fill">
+                My Portfolio
+              </Link>
+              <Link to="/contact" className="btn btn-ghost">
+                Contact Me
+              </Link>
             </div>
           </div>
+
+          <figure className="tile tile--portrait">
+            <img src={introdata.your_img_url} alt={introdata.title} />
+          </figure>
+
+          {featured.map((project, index) => (
+            <a className={`tile tile--project project-${index + 1}`} href={project.link} key={index}>
+              <span className="project-media">
+                <img src={project.img} alt="" />
+                <span className="project-index">{String(index + 1).padStart(2, "0")}</span>
+              </span>
+              <span className="project-meta">
+                <span className="project-copy">{project.desctiption}</span>
+                <span className="project-link">view project</span>
+              </span>
+            </a>
+          ))}
+
+          <article className="tile tile--about">
+            <h2>{dataabout.title}</h2>
+            <p>{dataabout.aboutme}</p>
+            <Link to="/about" className="btn btn-ghost">
+              About me
+            </Link>
+          </article>
+
+          <Link to="/portfolio" className="tile tile--more">
+            <span className="more-count">{dataportfolio.length}</span>
+            <span className="more-label">My Portfolio</span>
+          </Link>
         </div>
       </section>
     </HelmetProvider>
