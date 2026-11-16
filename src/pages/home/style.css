@@ -1,15 +1,14 @@
 .home {
-  padding: 16px 0 32px;
+  padding: 16px 0 0;
 }
 
 .dash {
   display: grid;
   grid-template-columns: minmax(0, 1fr) 280px;
-  gap: 16px 20px;
+  gap: 16px;
 }
 
 .who {
-  grid-column: 1 / -1;
   display: flex;
   gap: 12px;
   align-items: flex-start;
@@ -41,7 +40,11 @@
   font-size: 14px;
 }
 
-.dash__main h2,
+.block {
+  margin-top: 28px;
+}
+
+.block h2,
 .dash__side h2 {
   font-size: 14px;
   font-weight: 600;
@@ -53,7 +56,6 @@
   border-radius: 6px;
   background: var(--bg-card);
   padding: 12px;
-  align-self: start;
 }
 
 .dash__side p {
@@ -75,8 +77,36 @@
   text-decoration: underline;
 }
 
+.closer {
+  margin-top: 72px;
+  padding: 96px 16px 88px;
+  text-align: center;
+}
+
+.closer__line {
+  margin: 0;
+  font-size: clamp(48px, 8vw, 88px);
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  line-height: 1.05;
+  color: var(--text);
+}
+
+.closer__sub {
+  margin: 16px auto 0;
+  max-width: 36rem;
+  color: var(--muted);
+  font-size: 16px;
+  line-height: 1.5;
+}
+
 @media (max-width: 800px) {
   .dash {
     grid-template-columns: 1fr;
+  }
+
+  .closer {
+    margin-top: 48px;
+    padding: 64px 8px 56px;
   }
 }

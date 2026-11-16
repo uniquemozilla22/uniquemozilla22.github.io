@@ -3,23 +3,29 @@ import "./style.css";
 
 export const ProjectList = ({ items }) => {
   return (
-    <ul className="repos">
+    <ul className="featured-grid">
       {items.map((item) => (
-        <li className="repo" key={item.link}>
-          <div className="repo__top">
-            <a href={item.link}>{item.name}</a>
-          </div>
-          <p className="repo__desc">{item.description}</p>
-          <ul className="repo__points">
-            {item.points.map((point) => (
-              <li key={point}>{point}</li>
-            ))}
-          </ul>
-          <ul className="chips">
-            {item.tags.map((tag) => (
-              <li key={tag}>{tag}</li>
-            ))}
-          </ul>
+        <li key={item.link}>
+          <a
+            className="featured-card"
+            href={item.link}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label={item.name + " repository on GitHub"}
+          >
+            <span className="featured-card__name">{item.name}</span>
+            <span className="featured-card__desc">{item.description}</span>
+            <ul className="featured-card__points">
+              {item.points.map((point) => (
+                <li key={point}>{point}</li>
+              ))}
+            </ul>
+            <ul className="chips">
+              {item.tags.map((tag) => (
+                <li key={tag}>{tag}</li>
+              ))}
+            </ul>
+          </a>
         </li>
       ))}
     </ul>

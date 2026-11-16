@@ -1,0 +1,118 @@
+{
+  "Acitivity_lifecycle_and_state_DMA": {
+    "description": "Android codelab that adds lifecycle and state to a two-activity app.",
+    "source": "readme"
+  },
+  "Advance_Database_ERD_draw.io": {
+    "description": "Draw.io diagrams for a database use case.",
+    "source": "readme"
+  },
+  "anything_you_want": {
+    "description": "Empty repository",
+    "source": "empty"
+  },
+  "Bike_rental_System": {
+    "description": "React and Firebase app for renting bikes, with a manager panel.",
+    "source": "readme"
+  },
+  "blooogin-react-node-app": {
+    "description": "Vite React and TypeScript starter.",
+    "source": "practice"
+  },
+  "Bootcamp_collaburation_folder": {
+    "description": "Vite project. README is empty.",
+    "source": "practice"
+  },
+  "calendar-agent": {
+    "description": "Empty repository",
+    "source": "empty"
+  },
+  "Class-reservation-system": {
+    "description": "Class reservation system. README covers server setup.",
+    "source": "readme"
+  },
+  "e-commerce": {
+    "description": "Official Turborepo starter.",
+    "source": "readme"
+  },
+  "HelloToast": {
+    "description": "Android Studio exercise that shows a counter and a toast.",
+    "source": "readme"
+  },
+  "jsx-component": {
+    "description": "Vite React starter.",
+    "source": "practice"
+  },
+  "nansDeliveryAustralia": {
+    "description": "Nangs delivery site for cream chargers and whippers in Sydney.",
+    "source": "code"
+  },
+  "next-js-e-commereerce": {
+    "description": "Next.js app created with create-next-app.",
+    "source": "practice"
+  },
+  "nextjs-whatsapp": {
+    "description": "WhatsApp clone for practising Next.js server-side rendering, with Firebase.",
+    "source": "readme"
+  },
+  "OOP_Design_Patterns_Project_1": {
+    "description": "Empty repository",
+    "source": "empty"
+  },
+  "package_tracker": {
+    "description": "TrackIt. Enter a tracking number and see status on a map.",
+    "source": "code"
+  },
+  "project-capstone": {
+    "description": "Vite React and TypeScript starter.",
+    "source": "practice"
+  },
+  "roomate": {
+    "description": "Dashboard for groups, expenses, and balances.",
+    "source": "code"
+  },
+  "router": {
+    "description": "Vite React and TypeScript starter.",
+    "source": "practice"
+  },
+  "Simple_task": {
+    "description": "React app using Redux Toolkit. README is empty.",
+    "source": "code"
+  },
+  "splitter-pool": {
+    "description": "This is a simple app to manage your group expenses.",
+    "source": "code"
+  },
+  "stripe-payment": {
+    "description": "Vite React and TypeScript starter.",
+    "source": "practice"
+  },
+  "Text_and_scrolling_views_DMA": {
+    "description": "Android codelab that shows a ScrollView with a long page of text.",
+    "source": "readme"
+  },
+  "todo-takeo": {
+    "description": "Create React App starter.",
+    "source": "practice"
+  },
+  "TODO_DETAIL_APP": {
+    "description": "Android todo exercise about intents and talking between activities.",
+    "source": "readme"
+  },
+  "TODO_FIRST_APP": {
+    "description": "First Android todo exercise using activities and XML layouts.",
+    "source": "readme"
+  },
+  "tokenization": {
+    "description": "React Native app whose entry screen is a login page.",
+    "source": "code"
+  },
+  "uniquemozilla22.github.io": {
+    "description": "Personal website. This site.",
+    "source": "code"
+  },
+  "vite-ecommerce": {
+    "description": "Vite client with a Node backend. README is missing.",
+    "source": "code"
+  }
+}
