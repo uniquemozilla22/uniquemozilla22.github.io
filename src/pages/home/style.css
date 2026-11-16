@@ -22,7 +22,7 @@
   width: 64px;
   height: 64px;
   object-fit: cover;
-  object-position: center 18%;
+  object-position: center;
   border-radius: 6px;
   background: #010409;
 }

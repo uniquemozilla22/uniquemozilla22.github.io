@@ -1,4 +1,4 @@
-import image_me from "./assets/images/me.png";
+import image_me from "./assets/images/me.jpg";
 
 const logotext = "Yogesh B.";
 const meta = {
