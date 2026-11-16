@@ -1,19 +1,20 @@
 .about-sections {
   display: flex;
   flex-direction: column;
-  gap: clamp(2.4rem, 6vw, 4.2rem);
+  gap: 28px;
 }
 
 .about-block h2 {
-  font-size: var(--fs-xl);
-  margin-bottom: 1.15rem;
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 8px;
 }
 
 .about-copy {
   margin: 0;
   max-width: 40rem;
   color: var(--muted);
-  font-size: var(--fs-lg);
+  font-size: 14px;
 }
 
 .About-header .table {
@@ -97,35 +98,27 @@
 .service_ {
   background: var(--bg-card);
   border: 1px solid var(--line);
-  border-radius: var(--radius);
-  padding: 1.35rem 1.3rem 1.4rem;
+  border-radius: 6px;
+  padding: 12px;
   height: 100%;
-  transition: transform 200ms ease, border-color 200ms ease;
 }
 
 .service_::before {
   counter-increment: service;
   content: counter(service, decimal-leading-zero);
   display: inline-flex;
-  margin-bottom: 1rem;
-  padding: 0.18rem 0.48rem;
+  margin-bottom: 8px;
+  padding: 0 6px;
+  border: 1px solid var(--line);
   border-radius: 999px;
-  background: var(--accent);
-  color: var(--accent-ink);
-  font-family: var(--font-display);
-  font-weight: 800;
-  font-size: 0.78rem;
-  letter-spacing: 0.04em;
-}
-
-.service_:hover {
-  border-color: var(--accent);
-  transform: translateY(-3px);
+  color: var(--muted);
+  font-size: 12px;
 }
 
 .service__title {
-  margin: 0 0 0.55rem;
-  font-size: 1.35rem;
+  margin: 0 0 6px;
+  font-size: 14px;
+  font-weight: 600;
   border: 0;
   padding: 0;
 }

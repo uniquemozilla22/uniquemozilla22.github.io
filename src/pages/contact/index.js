@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import * as emailjs from "emailjs-com";
+import { sendContactEmail } from "../../lib/sendContact";
 import "./style.css";
 import { Helmet, HelmetProvider } from "react-helmet-async";
 import { meta } from "../../content_option";
@@ -21,21 +21,11 @@ export const ContactUs = () => {
     e.preventDefault();
     setFormdata({ loading: true });
 
-    const templateParams = {
+    sendContactEmail({
       from_name: formData.email,
       user_name: formData.name,
-      to_name: contactConfig.YOUR_EMAIL,
       message: formData.message,
-    };
-
-    emailjs
-      .send(
-        contactConfig.YOUR_SERVICE_ID,
-        contactConfig.YOUR_TEMPLATE_ID,
-        templateParams,
-        contactConfig.YOUR_USER_ID
-      )
-      .then(
+    }).then(
         (result) => {
           console.log(result.text);
           setFormdata({

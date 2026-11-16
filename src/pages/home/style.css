@@ -1,300 +1,82 @@
 .home {
-  padding: 1.15rem 0 3rem;
+  padding: 16px 0 32px;
 }
 
-.bento {
+.dash {
   display: grid;
-  gap: 0.9rem;
-  grid-template-columns: 1.3fr 1fr 0.92fr;
-  grid-template-areas:
-    "hero hero portrait"
-    "p1 p2 p3"
-    "about about more";
+  grid-template-columns: minmax(0, 1fr) 280px;
+  gap: 16px 20px;
 }
 
-.home .tile {
-  background: var(--bg-card);
-  border: 1px solid var(--line);
-  border-radius: var(--radius);
-  min-width: 0;
-  color: var(--text);
-}
-
-.home a.tile {
+.who {
+  grid-column: 1 / -1;
   display: flex;
-  flex-direction: column;
-  transition: transform 200ms ease, border-color 200ms ease, box-shadow 200ms ease;
-}
-
-.home a.tile:hover,
-.home a.tile:focus-visible {
-  color: var(--text);
-  border-color: var(--accent);
-  transform: translateY(-3px);
-  box-shadow: var(--shadow);
-  outline: none;
-}
-
-.home a.tile.tile--more,
-.home a.tile.tile--more:hover,
-.home a.tile.tile--more:focus-visible {
-  background: var(--accent);
-  color: var(--accent-ink);
-  border-color: var(--accent);
-}
-
-.home a.tile:focus-visible {
-  box-shadow: 0 0 0 3px var(--bg), 0 0 0 5px var(--accent);
-}
-
-.tile--hero {
-  grid-area: hero;
-  min-height: 440px;
-  padding: clamp(1.4rem, 3vw, 2.25rem);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-.hero-title {
-  font-size: var(--fs-display);
-  max-width: 9em;
-  margin-bottom: 1rem;
-}
-
-.hero-type {
-  min-height: 4.6em;
-  font-family: var(--font-display);
-  font-weight: 700;
-  font-size: clamp(1.35rem, 2.3vw, 1.85rem);
-  line-height: 1.35;
-  letter-spacing: -0.03em;
-}
-
-.hero-type .Typewriter__wrapper,
-.hero-lines p {
-  background: var(--accent);
-  color: var(--accent-ink);
-  box-decoration-break: clone;
-  -webkit-box-decoration-break: clone;
-  padding: 0.05em 0.22em 0.08em;
-  border-radius: 0.16em;
-}
-
-.hero-lines {
-  display: flex;
-  flex-direction: column;
+  gap: 12px;
   align-items: flex-start;
-  gap: 0.45rem;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  padding: 12px;
+  background: var(--bg-card);
 }
 
-.hero-lines p {
-  display: inline-block;
-  width: fit-content;
-  margin: 0;
-}
-
-.hero-type .Typewriter__cursor {
-  color: var(--accent);
-}
-
-.hero-copy {
-  max-width: 38rem;
-  margin: 1.15rem 0 0;
-  color: var(--muted);
-}
-
-.hero-actions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.75rem;
-  margin-top: 1.6rem;
-}
-
-.home .tile.tile--portrait {
-  grid-area: portrait;
-  position: relative;
-  margin: 0;
-  overflow: hidden;
-  min-height: 320px;
-  background: #070707;
-}
-
-.tile--portrait img {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
+.who img {
+  width: 64px;
+  height: 64px;
   object-fit: cover;
   object-position: center 18%;
+  border-radius: 6px;
+  background: #010409;
 }
 
-.tile--portrait::after {
-  content: "";
-  position: absolute;
-  left: 1rem;
-  bottom: 1rem;
-  width: 3rem;
-  height: 4px;
-  border-radius: 99px;
-  background: var(--accent);
-}
-
-.project-1 { grid-area: p1; }
-.project-2 { grid-area: p2; }
-.project-3 { grid-area: p3; }
-
-.project-media {
-  position: relative;
-  display: block;
-  aspect-ratio: 16 / 10;
-  overflow: hidden;
-  background: #f4f4f1;
-}
-
-.project-media img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  object-position: center;
-  transition: transform 500ms ease;
-}
-
-.tile--project:hover .project-media img {
-  transform: scale(1.05);
-}
-
-.project-index {
-  position: absolute;
-  top: 0.75rem;
-  left: 0.75rem;
-  background: var(--accent);
-  color: var(--accent-ink);
-  font-size: 0.75rem;
-  font-weight: 700;
-  letter-spacing: 0.06em;
-  padding: 0.25rem 0.48rem;
-  border-radius: 999px;
-}
-
-.project-meta {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 0.8rem;
-  padding: 1rem 1.05rem 1.15rem;
-}
-
-.project-copy {
+.who h1 {
+  font-size: 20px;
   font-weight: 600;
-  letter-spacing: -0.02em;
-  line-height: 1.35;
+  line-height: 1.25;
+  margin: 0 0 4px;
 }
 
-.project-link {
-  display: inline-flex;
-  background: var(--accent);
-  color: var(--accent-ink);
-  border-radius: 999px;
-  padding: 0.38rem 0.72rem;
-  font-size: 0.82rem;
-  font-weight: 700;
-}
-
-.tile--about {
-  grid-area: about;
-  padding: 1.5rem 1.6rem;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 0.9rem;
-}
-
-.tile--about h2 {
-  font-size: clamp(1.8rem, 3vw, 2.6rem);
-  max-width: 12em;
-}
-
-.tile--about p {
-  margin: 0;
+.who p {
+  margin: 0 0 10px;
   color: var(--muted);
-  font-size: var(--fs-lg);
-  max-width: 38rem;
-  flex: 1;
+  font-size: 14px;
 }
 
-.home .tile.tile--more {
-  grid-area: more;
-  justify-content: space-between;
-  gap: 1.5rem;
-  min-height: 180px;
-  padding: 1.25rem 1.3rem;
+.dash__main h2,
+.dash__side h2 {
+  font-size: 14px;
+  font-weight: 600;
+  margin: 0 0 8px;
 }
 
-.home a.tile.tile--more:hover {
-  filter: brightness(1.05);
+.dash__side {
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  background: var(--bg-card);
+  padding: 12px;
+  align-self: start;
 }
 
-.more-count {
-  font-family: var(--font-display);
-  font-weight: 800;
-  font-size: clamp(3.2rem, 5vw, 4.6rem);
-  letter-spacing: -0.06em;
-  line-height: 0.85;
+.dash__side p {
+  margin: 0 0 10px;
+  color: var(--muted);
+  font-size: 14px;
 }
 
-.more-label {
-  font-weight: 700;
-  font-size: 1.05rem;
+.dash__side .chips {
+  margin-bottom: 10px;
 }
 
-.more-label::after {
-  content: " →";
+.dash__side a {
+  color: var(--accent);
+  font-size: 14px;
 }
 
-@media (max-width: 980px) {
-  .bento {
-    grid-template-columns: 1fr 1fr;
-    grid-template-areas:
-      "hero hero"
-      "portrait portrait"
-      "p1 p2"
-      "p3 p3"
-      "about more";
-  }
-
-  .tile--hero {
-    min-height: 0;
-  }
-
-  .tile--portrait {
-    min-height: 460px;
-  }
+.dash__side a:hover {
+  text-decoration: underline;
 }
 
-@media (max-width: 680px) {
-  .bento {
+@media (max-width: 800px) {
+  .dash {
     grid-template-columns: 1fr;
-    grid-template-areas:
-      "hero"
-      "portrait"
-      "p1"
-      "p2"
-      "p3"
-      "about"
-      "more";
-  }
-
-  .hero-title {
-    font-size: clamp(2.4rem, 12vw, 3.3rem);
-  }
-
-  .tile--portrait {
-    min-height: 420px;
-  }
-
-  .hero-actions,
-  .hero-actions .btn {
-    width: 100%;
   }
 }

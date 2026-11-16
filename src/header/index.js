@@ -4,6 +4,7 @@ import { VscGrabber, VscClose } from "react-icons/vsc";
 import { NavLink, useLocation } from "react-router-dom";
 import { logotext, socialprofils } from "../content_option";
 import Themetoggle from "../components/themetoggle";
+import { useContactPanel } from "../components/contactpanel";
 
 const LINKS = [
   { to: "/", label: "Home", exact: true },
@@ -15,6 +16,7 @@ const LINKS = [
 const Headermain = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const { pathname } = useLocation();
+  const panel = useContactPanel();
 
   useEffect(() => {
     setMenuOpen(false);
@@ -73,6 +75,9 @@ const Headermain = () => {
             ))}
           </nav>
           <div className="site-header__tools">
+            <button type="button" className="btn btn-fill contact-launch" onClick={panel.openPanel}>
+              Contact me / Buy me a coffee
+            </button>
             <Themetoggle />
             <button
               type="button"
@@ -104,6 +109,18 @@ const Headermain = () => {
                     </NavLink>
                   </li>
                 ))}
+                <li className="menu_item">
+                  <button
+                    type="button"
+                    className="btn btn-fill"
+                    onClick={() => {
+                      closeMenu();
+                      panel.openPanel();
+                    }}
+                  >
+                    Contact me / Buy me a coffee
+                  </button>
+                </li>
               </ul>
             </div>
           </div>

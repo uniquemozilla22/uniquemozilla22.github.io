@@ -1,20 +1,13 @@
 import React from "react";
 import "./style.css";
 import { Helmet, HelmetProvider } from "react-helmet-async";
-import Typewriter from "typewriter-effect";
-import { introdata, meta, dataabout, dataportfolio } from "../../content_option";
+import { introdata, meta, dataabout, dataportfolio, skills } from "../../content_option";
 import { Link } from "react-router-dom";
-import usePrefersReducedMotion from "../../hooks/usePrefersReducedMotion";
-
-const featured = dataportfolio.slice(0, 3);
+import { ProjectList } from "../../components/projectlist";
+import { useContactPanel } from "../../components/contactpanel";
 
 export const Home = () => {
-  const reduced = usePrefersReducedMotion();
-  const lines = [
-    introdata.animated.first,
-    introdata.animated.second,
-    introdata.animated.third,
-  ];
+  const panel = useContactPanel();
 
   return (
     <HelmetProvider>
@@ -24,67 +17,35 @@ export const Home = () => {
           <title> {meta.title}</title>
           <meta name="description" content={meta.description} />
         </Helmet>
-        <div className="shell bento">
-          <div className="tile tile--hero">
-            <h1 className="hero-title">{introdata.title}</h1>
-            <div className="hero-type">
-              {reduced ? (
-                <div className="hero-lines">
-                  {lines.map((line) => (
-                    <p key={line}>{line}</p>
-                  ))}
-                </div>
-              ) : (
-                <Typewriter
-                  options={{
-                    strings: lines,
-                    autoStart: true,
-                    loop: true,
-                    deleteSpeed: 10,
-                  }}
-                />
-              )}
-            </div>
-            <p className="hero-copy">{introdata.description}</p>
-            <div className="hero-actions">
-              <Link to="/portfolio" className="btn btn-fill">
-                My Portfolio
-              </Link>
-              <Link to="/contact" className="btn btn-ghost">
-                Contact Me
-              </Link>
+        <div className="shell dash">
+          <div className="who">
+            <img src={introdata.your_img_url} alt={introdata.title} />
+            <div>
+              <h1>{introdata.title}</h1>
+              <p>{introdata.description}</p>
+              <button type="button" className="btn btn-fill" onClick={panel.openPanel}>
+                Contact me / Buy me a coffee
+              </button>
             </div>
           </div>
 
-          <figure className="tile tile--portrait">
-            <img src={introdata.your_img_url} alt={introdata.title} />
-          </figure>
+          <div className="dash__main">
+            <h2>Projects</h2>
+            <ProjectList items={dataportfolio} />
+          </div>
 
-          {featured.map((project, index) => (
-            <a className={`tile tile--project project-${index + 1}`} href={project.link} key={index}>
-              <span className="project-media">
-                <img src={project.img} alt="" />
-                <span className="project-index">{String(index + 1).padStart(2, "0")}</span>
-              </span>
-              <span className="project-meta">
-                <span className="project-copy">{project.desctiption}</span>
-                <span className="project-link">view project</span>
-              </span>
-            </a>
-          ))}
-
-          <article className="tile tile--about">
+          <aside className="dash__side">
             <h2>{dataabout.title}</h2>
             <p>{dataabout.aboutme}</p>
-            <Link to="/about" className="btn btn-ghost">
-              About me
-            </Link>
-          </article>
-
-          <Link to="/portfolio" className="tile tile--more">
-            <span className="more-count">{dataportfolio.length}</span>
-            <span className="more-label">My Portfolio</span>
-          </Link>
+            <ul className="chips">
+              {skills.map((skill) => (
+                <li key={skill.name}>
+                  {skill.name} {skill.value}%
+                </li>
+              ))}
+            </ul>
+            <Link to="/about">About me</Link>
+          </aside>
         </div>
       </section>
     </HelmetProvider>
