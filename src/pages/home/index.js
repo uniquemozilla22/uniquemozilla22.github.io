@@ -1,11 +1,15 @@
 import React from "react";
 import "./style.css";
 import { Helmet, HelmetProvider } from "react-helmet-async";
-import Typewriter from "typewriter-effect";
-import { introdata, meta } from "../../content_option";
+import { introdata, meta, dataabout, dataportfolio, skills } from "../../content_option";
 import { Link } from "react-router-dom";
+import { ProjectList } from "../../components/projectlist";
+import { RepoBrowser } from "../../components/repobrowser";
+import { useContactPanel } from "../../components/contactpanel";
 
 export const Home = () => {
+  const panel = useContactPanel();
+
   return (
     <HelmetProvider>
       <section id="home" className="home">
@@ -14,51 +18,46 @@ export const Home = () => {
           <title> {meta.title}</title>
           <meta name="description" content={meta.description} />
         </Helmet>
-        <div className="intro_sec d-block d-lg-flex align-items-center ">
-          <div
-            className="h_bg-image order-1 order-lg-2 h-100 "
-            style={{ backgroundImage: `url(${introdata.your_img_url})` }}
-          ></div>
-          <div className="text order-2 order-lg-1 h-100 d-lg-flex justify-content-center">
-            <div className="align-self-center ">
-              <div className="intro mx-auto">
-                <h2 className="mb-1x">{introdata.title}</h2>
-                <h1 className="fluidz-48 mb-1x">
-                  <Typewriter
-                    options={{
-                      strings: [
-                        introdata.animated.first,
-                        introdata.animated.second,
-                        introdata.animated.third,
-                      ],
-                      autoStart: true,
-                      loop: true,
-                      deleteSpeed: 10,
-                    }}
-                  />
-                </h1>
-                <p className="mb-1x">{introdata.description}</p>
-                <div className="intro_btn-action pb-5">
-                  <Link to="/portfolio" className="text_2">
-                    <div id="button_p" className="ac_btn btn ">
-                      My Portfolio
-                      <div className="ring one"></div>
-                      <div className="ring two"></div>
-                      <div className="ring three"></div>
-                    </div>
-                  </Link>
-                  <Link to="/contact">
-                    <div id="button_h" className="ac_btn btn">
-                      Contact Me
-                      <div className="ring one"></div>
-                      <div className="ring two"></div>
-                      <div className="ring three"></div>
-                    </div>
-                  </Link>
-                </div>
+        <div className="shell">
+          <div className="dash">
+            <div className="who">
+              <img src={introdata.your_img_url} alt={introdata.title} />
+              <div>
+                <h1>{introdata.title}</h1>
+                <p>{introdata.description}</p>
+                <button type="button" className="btn btn-fill" onClick={panel.openPanel}>
+                  Contact me / Buy me a coffee
+                </button>
               </div>
             </div>
+            <aside className="dash__side">
+              <h2>{dataabout.title}</h2>
+              <p>{dataabout.aboutme}</p>
+              <ul className="chips">
+                {skills.map((skill) => (
+                  <li key={skill.name}>
+                    {skill.name} {skill.value}%
+                  </li>
+                ))}
+              </ul>
+              <Link to="/about">About me</Link>
+            </aside>
           </div>
+
+          <section className="block">
+            <h2>Projects</h2>
+            <ProjectList items={dataportfolio} />
+          </section>
+
+          <section className="block">
+            <h2>All repositories</h2>
+            <RepoBrowser />
+          </section>
+
+          <footer className="closer">
+            <p className="closer__line">I'm Yogesh.</p>
+            <p className="closer__sub">{introdata.description}</p>
+          </footer>
         </div>
       </section>
     </HelmetProvider>

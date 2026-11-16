@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import {
   BrowserRouter as Router,
@@ -7,12 +7,12 @@ import {
 } from "react-router-dom";
 import AppRoutes from "./routes";
 import Headermain from "../header";
-import AnimatedCursor from "react-animated-cursor";
+import { ContactPanelProvider } from "../components/contactpanel";
 import "./App.css";
 
 function _ScrollToTop(props) {
   const { pathname } = useLocation();
-  useEffect(() => {
+  React.useEffect(() => {
     window.scrollTo(0, 0);
   }, [pathname]);
   return props.children;
@@ -22,19 +22,11 @@ const ScrollToTop = withRouter(_ScrollToTop);
 export default function App() {
   return (
     <Router basename={process.env.PUBLIC_URL}>
-      <div className="cursor__dot">
-        <AnimatedCursor
-          innerSize={15}
-          outerSize={15}
-          color="255, 255 ,255"
-          outerAlpha={0.4}
-          innerScale={0.7}
-          outerScale={5}
-        />
-      </div>
       <ScrollToTop>
-        <Headermain />
-        <AppRoutes />
+        <ContactPanelProvider>
+          <Headermain />
+          <AppRoutes />
+        </ContactPanelProvider>
       </ScrollToTop>
     </Router>
   );

@@ -1,13 +1,4 @@
-import weatheAPI from "./assets/images/weatheAPI.png";
-import rms from "./assets/images/rms.png";
-import fexal from "./assets/images/fexal.png";
-import canvas from "./assets/images/canvas.png";
-import shally from "./assets/images/shally.png";
-import merHealth from "./assets/images/MeroHealth.png";
-import ag from "./assets/images/agallery.png";
-import chatapplication from "./assets/images/chatapplication.png";
-import Rental_Image from "./assets/images/bike-rental.png";
-import image_me from "./assets/images/me.png";
+import image_me from "./assets/images/me.jpg";
 
 const logotext = "Yogesh B.";
 const meta = {
@@ -86,57 +77,74 @@ const services = [
 
 const dataportfolio = [
   {
-    img: merHealth,
-    desctiption: "Mero Health Application (React Native)",
+    name: "splitter-pool",
+    description: "This is a simple app to manage your group expenses.",
+    points: [
+      "Active groups, with create group",
+      "Active tabs, with create tab",
+      "Each user stores contributed and withdrawn amounts",
+    ],
+    tags: ["React", "Express", "Prisma"],
+    link: "https://github.com/uniquemozilla22/splitter-pool",
+  },
+  {
+    name: "roomate",
+    description: "Dashboard for groups, expenses, and balances.",
+    points: [
+      "Add expense, join group, and create group",
+      "Groups use a code for joining",
+      "Expenses split equal or custom",
+      "Settlements when users settle debts",
+    ],
+    tags: ["React", "Firebase", "Postgres"],
+    link: "https://github.com/uniquemozilla22/roomate",
+  },
+  {
+    name: "package_tracker",
+    description: "TrackIt. Enter a tracking number and see status on a map.",
+    points: [
+      "Shipping vendors: FedEx, UPS, DHL, USPS",
+      "Status for the tracking number",
+      "Map of the location",
+      "Tracking history",
+    ],
+    tags: ["React", "Google Maps"],
+    link: "https://github.com/uniquemozilla22/package_tracker",
+  },
+  {
+    name: "Mero_Hospital",
+    description: "The application is made on react native.",
+    points: [
+      "Booking an appointment",
+      "Chatting with a doctor",
+      "COVID data from the government of Nepal",
+      "Admin can add doctors and categories",
+    ],
+    tags: ["React Native", "Expo"],
     link: "https://github.com/uniquemozilla22/Mero_Hospital",
   },
   {
-    img: shally,
-    desctiption: "Shally Web Design (React Js) - Digital Nepal Pvt Ltd",
-    link: "https://github.com/uniquemozilla22/Shally_web_design",
+    name: "Splitwise_PY",
+    description:
+      "This Python application provides a simple way to split an amount equally or sub-equally among participants in entries.",
+    points: [
+      "Equal split",
+      "Sub-equal split",
+      "Add participants",
+      "Calculate split",
+    ],
+    tags: ["Python"],
+    link: "https://github.com/uniquemozilla22/Splitwise_PY",
   },
   {
-    img: chatapplication,
-    desctiption: "Chat Application",
-    link: "https://github.com/uniquemozilla22/nextjs-whatsapp",
-  },
-  {
-    img: ag,
-    desctiption: "Art Gallery Client & Supplier (React JS) - AITC Pvt Ltd",
-    link: "https://github.com/uniquemozilla22/art_ecommerce_frontend_react",
-  },
-  {
-    img: merHealth,
-    desctiption: "Mero Health Backend ( Node JS )",
-    link: "https://github.com/uniquemozilla22/Mero_Hospital",
-  },
-  {
-    img: Rental_Image,
-    desctiption: "Bike Rental Application",
-    link: "https://github.com/uniquemozilla22/Bike_rental_System",
-  },
-
-  {
-    img: canvas,
-    desctiption: "Application to compile and draw the shape in canvas (C#)",
-    link: "https://github.com/uniquemozilla22/Code_line_to_Draw",
-  },
-
-  {
-    img: fexal,
-    desctiption: "Fexal E-commerce mock",
-    link: "https://blissful-mestorf-251970.netlify.app/",
-  },
-  {
-    img: weatheAPI,
-    desctiption: "Weather App ( React Js)",
-    link: "https://github.com/uniquemozilla22/WeatherApp_API",
-  },
-  {
-    img: rms,
-    desctiption:
-      "Restaurant Management System (React Native, TypeScript, NodejS)",
-    link: "https://github.com/uniquemozilla22/RMS_backend",
+    name: "uniquemozilla22.github.io",
+    description: "Personal website. This site.",
+    points: [
+      "Projects, about, and contact",
+      "Contact form through EmailJS",
+    ],
+    tags: ["React"],
+    link: "https://github.com/uniquemozilla22/uniquemozilla22.github.io",
   },
 ];
 

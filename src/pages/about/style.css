@@ -1,100 +1,142 @@
-.sec_sp {
-    margin-bottom: calc(3rem + 5.128vw)
+.about-sections {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
 }
 
-.table td,
-.table th {
-    color: var(--text-color);
+.about-block h2 {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 8px;
 }
 
-.t_border {
-    border-color: var(--text-color) !important;
+.about-copy {
+  margin: 0;
+  max-width: 40rem;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.About-header .table {
+  color: var(--text);
+  margin-bottom: 0;
+}
+
+.About-header .table th,
+.About-header .table td {
+  border-top: 1px solid var(--line);
+  padding: 0.95rem 0.4rem;
+  vertical-align: middle;
+}
+
+.About-header .table th {
+  font-family: var(--font-display);
+  letter-spacing: -0.03em;
+}
+
+.table-scroll {
+  overflow-x: auto;
+}
+
+.skills {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.35rem 2rem;
+}
+
+.skill__meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 1rem;
+  margin-bottom: 0.45rem;
 }
 
 .progress-title {
-    font-size: 16px;
-    font-weight: 700;
-    margin: 15px 0 20px;
-    font-family: 'Raleway';
+  margin: 0;
+  font-family: var(--font-body);
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
 }
 
-.progress {
-    height: 5px;
-    background: var(--secondary);
-    border-radius: 0;
-    box-shadow: none;
-    margin-bottom: 30px;
-    overflow: visible;
+.progress-value {
+  color: var(--text);
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  font-style: normal;
 }
 
-.progress .progress-bar {
-    position: relative;
-    background: var(--text-color);
-    animation: animate-positive 2s;
-    overflow: visible;
-    opacity: 0.9;
+.About-header .progress {
+  height: 8px;
+  background: var(--track);
+  border-radius: 99px;
+  box-shadow: none;
+  overflow: hidden;
+  margin-bottom: 1.15rem;
 }
 
-.progress .progress-value {
-    position: absolute;
-    top: -30px;
-    right: 8px;
-    font-size: 17px;
-    font-weight: bold;
-    font-style: italic;
-    color: var(--text-color);
-}
-
-@-webkit-keyframes animate-positive {
-    0% {
-        width: 0%;
-    }
+.About-header .progress-bar {
+  background: var(--accent);
+  border-radius: 99px;
+  animation: animate-positive 900ms ease;
 }
 
 @keyframes animate-positive {
-    0% {
-        width: 0%;
-    }
+  from {
+    width: 0;
+  }
 }
 
-.section-title {
-    font-size: 45px;
+.services {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.9rem;
+  counter-reset: service;
+}
+
+.service_ {
+  background: var(--bg-card);
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  padding: 12px;
+  height: 100%;
+}
+
+.service_::before {
+  counter-increment: service;
+  content: counter(service, decimal-leading-zero);
+  display: inline-flex;
+  margin-bottom: 8px;
+  padding: 0 6px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  color: var(--muted);
+  font-size: 12px;
 }
 
 .service__title {
-    padding: 8px 0;
-    border-bottom: solid 2px var(--secondary-color);
+  margin: 0 0 6px;
+  font-size: 14px;
+  font-weight: 600;
+  border: 0;
+  padding: 0;
 }
 
-.service-section .service-category-title {
-    padding-bottom: 4px;
+.service_desc {
+  margin: 0;
+  color: var(--muted);
 }
 
-
-/*! CSS Used keyframes */
-
-@-webkit-keyframes fadeInUp {
-    0% {
-        opacity: 0;
-        -webkit-transform: translate3d(0, 100%, 0);
-        transform: translate3d(0, 100%, 0);
-    }
-    to {
-        opacity: 1;
-        -webkit-transform: translateZ(0);
-        transform: translateZ(0);
-    }
+@media (max-width: 900px) {
+  .services,
+  .skills {
+    grid-template-columns: 1fr;
+  }
 }
 
-@keyframes fadeInUp {
-    0% {
-        opacity: 0;
-        -webkit-transform: translate3d(0, 100%, 0);
-        transform: translate3d(0, 100%, 0);
-    }
-    to {
-        opacity: 1;
-        -webkit-transform: translateZ(0);
-        transform: translateZ(0);
-    }
+@media (min-width: 700px) and (max-width: 900px) {
+  .services {
+    grid-template-columns: 1fr 1fr;
+  }
 }
